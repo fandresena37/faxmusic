@@ -48,10 +48,16 @@ function Change(donnee,container){
         let items = template.content.cloneNode(true)
         let img = items.querySelector("img")
         img.src = "../Img/"+element.src
+        img.addEventListener('click',()=>{
+            window.location.href="./Detail.html?index="+element.id
+        })
         let desc = items.querySelector(".description")
+        desc.addEventListener('click',()=>{
+            window.location.href="./Detail.html?index="+element.id
+        })
         desc.innerText = element.desc
-        let link = items.querySelector(".link-detail")
-        link.href="./Detail.html?index="+element.id
+        // let link = items.querySelector(".link-detail")
+        // link.href="./Detail.html?index="+element.id
         let price = items.querySelector(".price")
         price.innerText = "$"+element.price.toFixed(2)
         let button = items.querySelector("button")
