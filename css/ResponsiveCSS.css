@@ -311,6 +311,9 @@
             background-color: var(--blueColor);
             transition: all 0.5s ease;
         }
+        .menu-slide .defile{
+            height: 440px;
+        }
         .menu-slide .logo{
             height: 60px;
             width: 100%;
@@ -472,7 +475,16 @@
     .panier-float{
         overflow: scroll;
     }
-}    
+}   
+@media (max-height:500px) {
+    .menu-slide .defile{
+        overflow: scroll;
+        height: 100%;
+    }
+    .menu-slide{
+        height: 100%;
+    }
+} 
 @media (max-width:500px){
     .panier-princ{
         width: 100%;

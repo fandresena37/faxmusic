@@ -680,6 +680,15 @@ footer .foot-tete button:hover{
         overflow: scroll;
     }
 }    
+@media (max-height:500px) {
+    .menu-slide .defile{
+        overflow: scroll;
+        height: 100%;
+    }
+    .menu-slide{
+        height: 100%;
+    }
+} 
 @media (max-width:500px){
     .panier-princ{
         width: 100%;
