@@ -473,3 +473,8 @@
         overflow: scroll;
     }
 }    
+@media (max-width:500px){
+    .panier-princ{
+        width: 100%;
+    }
+}
