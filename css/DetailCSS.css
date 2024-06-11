@@ -670,3 +670,21 @@ footer .foot-tete button:hover{
         padding-left: 20px;
     }
 }
+
+@media (max-height:700px) {
+    .panier-float{
+        display: block;
+        align-items: start;
+    }
+    main .best-price .entete{
+        overflow-x: scroll;
+    }
+    .panier-float{
+        overflow: scroll;
+    }
+}    
+@media (max-width:500px){
+    .panier-princ{
+        width: 100%;
+    }
+}
