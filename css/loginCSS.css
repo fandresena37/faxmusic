@@ -10,6 +10,26 @@
     --tailleCenter:1170px;
     --blueColor:rgb(10, 181, 238);
 }
+.btn-achat{
+    width: 120px;
+    height: 45px;
+    color: white;
+    background-color: var(--blackColor);
+    transition: all 0.5s ease;
+}
+.btn-achat1{
+    width: 120px;
+    height: 45px;
+    color: var(--blackColor);
+    background-color: white;
+    transition: all 0.5s ease;
+    font-size: 14px;
+    font-weight: bold;
+}
+.btn-achat:hover,.btn-achat1:hover{
+    color: white;
+    background-color: var(--blueColor);
+}
 body{
     background-color: var(--blueColor);
     display: flex;
@@ -110,4 +130,30 @@ form{
     body{
         align-items: start;
     }
+}
+.div-float{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.534);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-float .princ{
+    background-color: white;
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: red;
+    gap: 30px;
 }

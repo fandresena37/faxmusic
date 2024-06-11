@@ -12,18 +12,24 @@ getLogin()
 .catch(()=>{
     console.error("erreur")
 })
+let access = false
 function Connexion(){
     let userValue = document.querySelector("#username").value
     let passValue = document.querySelector("#password").value
     dataLogin.forEach(element => {
-        console.log(element.username)
-        console.log(element.password)
         if(userValue == element.username && passValue == element.password){
             localStorage.setItem("user",userValue)
             window.location.href="./index.html"
+            access = true
         }
     })
+    if(!access){
+    let template = document.getElementById("incorrect")
+    let items = template.content.cloneNode(true)
+    document.body.appendChild(items)
+    }
 }
-function showChargement(){
+function removeMenu(){
+    document.body.removeChild(document.querySelector(".div-float"))
+}
 
-}
