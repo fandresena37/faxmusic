@@ -203,7 +203,10 @@ function showCart(){
 
 
 function verifieValue(input){
-    if(isNaN(parseInt(input.value)) || parseInt(input.value)===0){
+    if(input.value === ""){
+        input.value = ""
+    }
+    else if(isNaN(parseInt(input.value)) || parseInt(input.value)===0){
         input.value = 1
     }  
 }
@@ -218,6 +221,9 @@ function hiddenCart(){
 /// change le nombre de produit dans le panier
 
 function ChangeNb(index,element){
+    if(element.value === ""){
+        element.value = 1
+    }
     MonPanier.forEach(elt=>{
         if(elt.id == index){
             elt.nb = parseInt(element.value)
