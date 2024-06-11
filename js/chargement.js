@@ -13,7 +13,10 @@ function showChargement(){
     divPrinc.classList.add("chargement-princ")
     divLabel.classList.add("chargement-label")
     divCart.classList.add("chargement-cart")
-    divLabel.innerHTML="<div><h3>BIENVENUE SUR FAX MUSIC</h3><div>"
+    divLabel.innerHTML=`<div style="display:flex; flex-direction:row;align-items:center">
+                        <img src="../Img/logo-removebg-preview.png" style="height:30px;width:30px;margin-right:10px">
+                        <h3 style="white-space: nowrap;">FAX MUSIC</h3>
+                        <div>`
     divCart.innerHTML=`
         <div class="label">
             <div>

@@ -1,0 +1,2 @@
+window.BAO.Cycler=class{constructor(items){this.items=items,this.currentPosition=0}get current(){return this.items[this.currentPosition]}set(val){this.currentPosition=val}prev(){return this.currentPosition=this.currentPosition-1,this.currentPosition<0&&(this.currentPosition=this.items.length-1),this.current}next(){return this.currentPosition=(this.currentPosition+1)%this.items.length,this.current}};
+//# sourceMappingURL=/cdn/shop/t/50/assets/bao-cycler.js.map?v=21525716723937485251707734700

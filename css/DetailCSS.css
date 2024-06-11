@@ -1,0 +1,672 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --JauneColor:rgb(255, 196, 0);
+    --blackColor:rgb(29, 29, 29);
+    --GrayColor:rgb(121, 121, 121);
+    --tailleCenter:1170px;
+    --blueColor:rgb(10, 181, 238);
+}
+@media (max-width:1175px){
+    :root{
+        --tailleCenter:90%;
+    }
+}
+.font-color{
+    color: var(--blueColor);
+}
+.back-color{
+    background-color: var(--blueColor);
+}
+.back-black{
+    background-color: var(--blackColor);
+}
+.center-taille{
+    width: var(--tailleCenter);
+}
+.btn-achat{
+    width: 120px;
+    height: 45px;
+    color: white;
+    background-color: var(--blackColor);
+    transition: all 0.5s ease;
+}
+.btn-achat1{
+    width: 120px;
+    height: 45px;
+    color: var(--blackColor);
+    background-color: white;
+    transition: all 0.5s ease;
+    font-size: 14px;
+    font-weight: bold;
+}
+.btn-achat:hover,.btn-achat1:hover{
+    color: white;
+    background-color: var(--blueColor);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.menu-slide{
+    display: none;
+}
+.cart button{
+    position: fixed;
+    z-index: 5;
+    top:70px;
+    right: 30px;
+    height: 70px;
+    width: 70px;
+    border-radius: 40px;
+    background-color: white;
+    box-shadow: 0px 0px 3px rgb(68, 68, 68);
+    border: none;
+}
+.cart-nb{
+    position: fixed;
+    z-index: 6;
+    top:65px;
+    right: 30px;
+    background-color: var(--blueColor);
+    height: 25px;
+    width: 25px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
+    display: none;
+}
+.cart button svg{
+    height: 55%;
+    width: 55%;
+    fill: var(--blackColor);
+}
+
+
+/***************** header ******************/
+
+header{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+}
+header .head-welcome{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+header .head-welcome .welcome-center{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--tailleCenter);
+    height: 100%;
+}
+header .head-welcome .welcome-center div{
+    display: flex;
+    gap: 20px;
+}
+header .head-welcome .welcome-center p{
+    margin: 0;
+    color:var(--GrayColor);
+    font-size: 14px;
+}
+header .head-nav{
+    height: 60%;
+    width: 100%;
+    background-color: var(--blueColor);
+}
+header .head-nav .nav-center{
+    width: var(--tailleCenter);
+    display: flex;
+}
+header .head-nav .nav-center .logo{
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    font-size: 18px;
+}
+header .head-nav .nav-center .logo img{
+    height: 45px;
+    width: 45px;
+}
+header .head-nav .nav-center div ul{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+    list-style: none;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+}
+header .head-nav .nav-center div ul li{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    position: relative;
+}
+header .head-nav .nav-center div ul li:hover{
+    color: black;
+}
+header .head-nav .nav-center div ul li::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 0px;
+    height: 2px;
+    background-color: black;
+    transition: all 0.5s ease;
+}
+header .head-nav .nav-center div ul li:hover::after{
+    width: 100%;
+}
+header .btn-menu{
+    display: none;
+}
+
+
+/**************** mon panier ******************/
+
+.panier-princ{
+    background-color: white;
+    height: auto;
+    width: 500px;
+}
+.panier-princ button{
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+}
+.panier-princ button svg{
+    height: 60%;
+    width: 60%;
+}
+.panier-princ .panier-tete{
+    height: 50px;
+    background-color: #f1f1f1;
+    padding: 0px 10px 0px 10px;
+    font-size: 20px;
+    color: gray;
+}
+.panier-float{
+    background-color: #242424c4;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+.panier-produit{
+    width: 100%;
+    height: auto;
+    color: gray;
+}
+.panier-produit .prod-princ{
+    width: 100%;
+    height: 150px;
+    overflow: auto;
+}
+.panier-produit div{
+    height: 50px;
+    gap: 10px;
+    width: 80%;
+}
+.panier-produit div input{
+    height: 80%;
+    width: 80px;
+    border-radius: 5px;
+    border: 2px solid rgb(206, 206, 206);
+    padding: 0px 5px 0px 5px;
+    color: gray;
+}
+.panier-produit div .desc{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 150px;
+    font-weight: bold;
+}
+.panier-produit div img{
+    height: 90%;
+    width: 40px;
+}
+.panier-produit div svg{
+    height: 20px;
+    width: 20px;
+    fill: rgb(179, 178, 178);
+    margin-right: 20px;
+}
+.panier-produit .prod-items{
+    width: 95%;
+    height: auto;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding-bottom: 3px;
+}
+.information{
+    margin-top: 20px;
+    height: auto;
+    width: 100%;
+}
+.information form{
+    gap: 20px;
+}
+.information input,textarea{
+    height: 45px;
+    width: 80%;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(226, 226, 226);
+    padding-left: 20px;
+    color: rgb(41, 41, 41);
+    outline: none;
+}
+.information textarea{
+    height: 150px;
+    resize: none;
+    padding-top: 20px;
+}
+.information button{
+    margin-bottom: 20px;
+    height: 40px;
+    width: 120px;
+    background-color: var(--blackColor);
+}
+.panier-princ-vide{
+    background-color: white;
+    height: 400px;
+    width: 500px;
+}
+.panier-princ-vide{
+    background-color: white;
+    height: 300px;
+    width: 500px;
+}
+.panier-princ-vide button{
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+}
+.panier-princ-vide button svg{
+    height: 60%;
+    width: 60%;
+}
+.panier-princ-vide .panier-tete{
+    height: 50px;
+    background-color: #f1f1f1;
+    padding: 0px 10px 0px 10px;
+    font-size: 20px;
+    color: gray;
+}
+.panier-princ-vide .mess{
+    height: 250px;
+    width: 100%;
+    color: rgb(165, 165, 165);
+    gap: 10px;
+}
+
+
+/**************main********************/
+
+main .princ section{
+    margin-top: 50px;
+    width: 50%;
+    height: 650px;
+}
+main .section-img .img-detail{
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: 50px;
+}
+main .section-img{
+    align-items: center;
+}
+main .section-info{
+    padding-left: 50px;
+    gap: 25px;
+}
+main .section-info .btn-desc{
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: white;
+    font-size: 12px;
+    font-weight: bold;
+    color: gray;
+    border-bottom: 2px solid var(--blueColor);
+}
+main .section-info .name{
+    font-size: 25px;
+}
+main .section-info .price{
+    font-size: 20px;
+    color: var(--blueColor);
+    font-weight: bold;
+}
+main .section-info .achat input{
+    height: 45px;
+    width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 30px;
+    border-radius: 5px;
+    border: 1px solid var(--GrayColor);
+}
+/************** footer ****************/
+
+footer{
+    background-color: white;
+    padding-top: 100px;
+}
+footer p{
+    margin: 0px;
+}
+footer .princ{
+    background-color: #242424;
+    height: 600px;
+    width: 100%;
+}
+footer .princ .center-taille{
+    height: 100%;
+    gap: 40px;
+}
+footer .princ .center-taille .items-foot{
+    width: calc(100%/4);
+    height: 100%;
+    gap: 30px;
+}
+footer .princ .center-taille .items-foot ul{
+    list-style: none;
+    color: rgba(167, 167, 167, 0.445);
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+footer .bas{
+    background-color: rgb(31, 31, 31);
+    height: 90px;
+    width: 100%;
+    font-size: 14px;
+}
+footer .bas div{
+    height: 100%;
+    color: white;
+}
+.font-foot{
+    color: rgba(255, 255, 255, 0.445);
+}
+footer .foot-tete{
+    height: 200px;
+    gap: 10px;
+}
+footer .foot-tete input,button{
+    height: 50px;
+    width: 100%;
+}
+footer .foot-tete input{
+    background-color:rgb(59, 59, 59);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 25px;
+    color: white;
+}
+footer .foot-tete button{
+    background-color: var(--blueColor);
+    color: white;
+    transition: all 0.5s ease;
+}
+footer .foot-tete button:hover{
+    background-color:white;
+    color:black;
+}
+
+
+/********************* chargement *********************/
+
+
+.chargement-princ{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 40;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chargement-princ div{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+}
+.chargement-princ .chargement-cart{
+    display: flex;
+    flex-direction: row;
+}
+.chargement-princ .chargement-cart .label{
+    width: 0px;
+    overflow: hidden;
+}
+.chargement-princ .chargement-cart .label div{
+    width: 600px;
+}
+.chargement-princ .chargement-label{
+    width: 0px;
+    overflow: hidden;
+}
+.chargement-princ .chargement-label div{
+    width: 600px;
+}
+.chargement-princ div svg{
+    height: 30px;
+    width: 30px;
+}
+
+@keyframes show {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 600px;
+    }
+}
+@keyframes showCart {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 250px;
+    }
+}
+
+
+/********************* responsive *********************/
+
+
+
+@media (max-width:815px) {
+    footer .princ {
+        height: auto;
+    }
+    footer .princ .center-taille{
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    footer .princ .center-taille .items-foot{
+        width: 90%;
+        padding-left: 30px;
+        margin: 10px 0px 10px 0px;
+    }
+    footer .foot-tete input,button{
+        width: 300px;
+    }
+}
+@media (max-width:1062px) {
+    .menu-slide{
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        position: fixed;
+        top: -500px;
+        left: 0;
+        width: 100%;
+        z-index: 30;
+        background-color: var(--blueColor);
+        transition: all 0.5s ease;
+    }
+    .menu-slide .logo{
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-left: 20px;
+    }
+    .menu-slide .logo button{
+        margin-left: auto;
+        margin-right: 10px;
+        height: 40px;
+        width: 40px;
+        border: none;
+        background-color: transparent;
+    }
+    .menu-slide .logo svg{
+        height: 25px;
+        width: 25px;
+        fill: white;
+    }
+    .menu-slide .logo img{
+        height: 40px;
+        width: 40px;
+    }
+    .menu-slide ul{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    .menu-slide ul li{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color:white;
+    }
+    .menu-slide .para-wel,.para-cont{
+        color: rgb(87, 80, 80);
+        font-size: 12px;
+    }
+    .menu-slide ul li:hover{
+        color: black;
+    }
+    header .head-nav .nav-center .ul-nav{
+        display: none;
+    }
+    header .btn-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        margin-left: auto;
+        margin-right: 20px;
+        background-color: transparent;
+        border: none;
+    }
+    header .btn-menu svg{
+        height: 20px;
+        width: 20px;
+        fill: white;
+    }
+    header{
+        height: 70px;
+    }
+    header .head-nav{
+        padding-left: 30px;
+        height: 100%;
+    }
+    header .head-welcome{
+        display: none;
+    }
+    header .head-welcome{
+        width: auto;
+    }
+    header .head-nav .nav-center .logo img{
+        height: 40px;
+        width: 40px;
+    }
+}
+@media (max-width:545px){
+    footer .princ .center-taille{
+        width: 95%;
+    }
+    footer .princ .center-taille .items-foot{
+        width: 100%;
+    }
+    footer .entete{
+        display: none;
+    }
+    footer .foot-tete input, button{
+        width: 100%;
+    }
+}
+@media (max-width:840px) {
+    main .princ{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    main .princ section{
+        width: 90%;
+        margin: 0;
+    }
+    main .section-img .img-detail{
+        width: 600px;
+        height: 500px;
+        margin: 0;
+        margin-top: 30px;
+    }
+    main .section-img{
+        justify-content: center;
+        align-items: normal;
+        height: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    main .princ .section-info{
+        width: 100%;
+        padding-right: 20px;
+    }
+}
+@media (max-width:600px) {
+    main .section-img .img-detail{
+        width: 100%;
+        height: 500px;
+    }
+    main .princ .section-info{
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}

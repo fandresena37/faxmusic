@@ -50,6 +50,8 @@ function Change(donnee,container){
         img.src = "../Img/"+element.src
         let desc = items.querySelector(".description")
         desc.innerText = element.desc
+        let link = items.querySelector(".link-detail")
+        link.href="./Detail.html?index="+element.id
         let price = items.querySelector(".price")
         price.innerText = "$"+element.price.toFixed(2)
         let button = items.querySelector("button")
@@ -134,7 +136,6 @@ function ChangeActive(index){
 
 function addCart(donnee){
     let exit = false
-    let nb = 0
     if(MonPanier.length!=0){
         MonPanier.forEach(element=>{
             if(element.id == donnee.id){
@@ -174,6 +175,7 @@ function showCart(){
         desc.innerText = element.desc
         let nb = itemsClone.querySelector("input")
         nb.addEventListener("change",()=>ChangeNb(element.id,nb))
+        nb.addEventListener('input',()=>verifieValue(nb))
         nb.value = element.nb
         let price = itemsClone.querySelector(".panier-price")
         price.innerText = "$"+(element.price * element.nb).toFixed(2)
@@ -193,6 +195,12 @@ function showCart(){
     document.body.style="overflow:hidden"
 }
 
+
+function verifieValue(input){
+    if(isNaN(parseInt(input.value)) || parseInt(input.value)===0){
+        input.value = 1
+    }  
+}
 
 /// supprimer le panier
 

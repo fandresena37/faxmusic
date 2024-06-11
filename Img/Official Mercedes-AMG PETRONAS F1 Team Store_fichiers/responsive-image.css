@@ -1,0 +1,2 @@
+.rsp-Image{position:relative;display:flex;width:100%}.rsp-Image_Image{width:100%;object-fit:cover;object-position:center}@supports (aspect-ratio: 16 / 9){.rsp-Image_Image{aspect-ratio:var(--Aspect_Ratio);height:100%}}@supports not (aspect-ratio: 16 / 9){.rsp-Image:after{content:"";display:block;width:0;padding-block-start:var(--Image_AspectRatio)}.rsp-Image_Image{position:absolute;top:0;left:0;z-index:1;height:100%}}
+/*# sourceMappingURL=/cdn/shop/t/50/assets/responsive-image.css.map?v=5594366790153381241707734775 */
