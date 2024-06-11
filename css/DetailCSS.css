@@ -676,9 +676,6 @@ footer .foot-tete button:hover{
         display: block;
         align-items: start;
     }
-    main .best-price .entete{
-        overflow-x: scroll;
-    }
     .panier-float{
         overflow: scroll;
     }
