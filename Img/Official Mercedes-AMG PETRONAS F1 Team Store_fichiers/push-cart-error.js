@@ -1,2 +1,0 @@
-export class PushCartError extends window.BAO.CustomElement(){static get requiredElements(){return["close"]}setupListeners(){super.setupListeners(),this.listeners.add(this,"click",this.onItemClick.bind(this)),window.setTimeout(()=>{this.remove()},2e3)}onItemClick(e){this.setAttribute("aria-hidden","true")}}customElements.get("push-cart-error")||customElements.define("push-cart-error",PushCartError);
-//# sourceMappingURL=/cdn/shop/t/50/assets/push-cart-error.js.map?v=48389224149898947211707734766

@@ -1,2 +1,0 @@
-window.BAO.EventBus=class{constructor(){this._bus=document.createElement("div")}addEventListener(event,callback){this._bus.addEventListener(event,callback)}removeEventListener(event,callback){this._bus.removeEventListener(event,callback)}dispatchEvent(event,detail={}){this._bus.dispatchEvent(new CustomEvent(event,{detail}))}};
-//# sourceMappingURL=/cdn/shop/t/50/assets/bao-event-bus.js.map?v=120213979582113567311707734701

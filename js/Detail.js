@@ -73,11 +73,6 @@ function verifieValue(input){
          input.value = 1
     }  
 }
-function verification(input){
-    if(input.value === ""){
-        input.value = 1
-    }
-}
 
 function addCart(data,number){
     let exit = false

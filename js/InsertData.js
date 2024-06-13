@@ -186,11 +186,14 @@ function showCart(){
         let price = itemsClone.querySelector(".panier-price")
         price.innerText = "$"+(element.price * element.nb).toFixed(2)
         let remove = itemsClone.querySelector(".delete")
-        remove.addEventListener('click',()=>removeProduit(element.id))
+        remove.addEventListener('click',()=>removeProduit(element.id,itemsClone,princ))
         total+=(element.price * element.nb)
         princ.appendChild(itemsClone)
     })
     labelTotal.innerText = "TOTAL : $"+total.toFixed(2)
+    panierClone.addEventListener('click',()=>{
+    	hiddenCart()
+    })
     document.body.appendChild(panierClone)
     }
     else{
@@ -209,6 +212,13 @@ function verifieValue(input){
     else if(isNaN(parseInt(input.value)) || parseInt(input.value)===0){
         input.value = 1
     }  
+}
+
+
+function verification(input){
+    if(input.value === ""){
+        input.value = 1
+    }
 }
 
 /// supprimer le panier
@@ -254,12 +264,15 @@ function NbItteration(){
 
 /// supprime un produit dans le panier
 
-function removeProduit(index){
+function removeProduit(index,div,container){
     const MonPanierTmp = MonPanier.filter(element=>element.id!==index)
     MonPanier = MonPanierTmp
     localStorage.setItem("panier",JSON.stringify(MonPanier))
-    hiddenCart()
-    showCart()   
+    container.removeChild(div)
+    if(MonPanier.length===0){
+        hiddenCart()
+        showCart()
+    }  
     NbItteration()
 }
 
