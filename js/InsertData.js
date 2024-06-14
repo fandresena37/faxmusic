@@ -4,7 +4,7 @@ let BestIntru = null
 let Onsale = null
 let view = null
 let MonPanier = null
-if(localStorage.getItem("panier")!=null){
+if(localStorage.getItem("panier")!==null){
     MonPanier = JSON.parse(localStorage.getItem("panier"))
     NbItteration()
 }
